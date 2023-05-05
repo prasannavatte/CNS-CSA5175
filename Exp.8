@@ -1,0 +1,23 @@
+plaintext_alphabet = "abcdefghijklmnopqrstuvwxyz"
+ciphertext_alphabet = "CIPHERABDFGJKLNOQSTUVWXYZ"
+cipher_dict = dict(zip(plaintext_alphabet, ciphertext_alphabet))
+message = input("enter the message: ")
+encrypted_message = ""
+for ch in message:
+        if ch.isalpha():
+            if ch.islower():
+                 encrypted_ch = cipher_dict[ch]
+            else:
+                 encrypted_ch = cipher_dict[ch.lower()].upper()
+        else:
+            encrypted_ch = ch
+        encrypted_message += encrypted_ch
+
+
+print("Encrypted message:", encrypted_message)
+print("Cipher key:", cipher_dict)
+
+OUTPUT:
+enter the message: abcdefg
+Encrypted message: CIPHERA
+Cipher key: {'a': 'C', 'b': 'I', 'c': 'P', 'd': 'H', 'e': 'E', 'f': 'R', 'g': 'A', 'h': 'B', 'i': 'D', 'j': 'F', 'k': 'G', 'l': 'J', 'm': 'K', 'n': 'L', 'o': 'N', 'p': 'O', 'q': 'Q', 'r': 'S', 's': 'T', 't': 'U', 'u': 'V', 'v': 'W', 'w': 'X', 'x': 'Y', 'y': 'Z'}
